@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build: ./server
+    ports:
+      - '3001:3001'
+  frontend:
+    build: ./client
+    restart: always
+    ports:
+      - '8080:8080'
+  db:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
